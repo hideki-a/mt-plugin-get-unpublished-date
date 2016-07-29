@@ -3,6 +3,7 @@ name: GetUnpublishedDate
 version: 1.0
 author_name: Hideki Abe
 author_link: https://www.anothersky.pw/
+description: 記事の公開終了日を取得します。
 
 tags:
     function:
