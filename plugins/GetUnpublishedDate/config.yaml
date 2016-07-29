@@ -1,0 +1,20 @@
+id: GetUnpublishedDate
+name: GetUnpublishedDate
+version: 1.0
+author_name: Hideki Abe
+author_link: https://www.anothersky.pw/
+
+tags:
+    function:
+        EntryUnpublishedDate: >
+            sub {
+                my ($ctx, $args) = @_;
+                my $e = $ctx->stash('entry')
+                    or return $ctx->_no_entry_error();
+                if ($e->unpublished_on) {
+                    $args->{ts} = $e->unpublished_on;
+                    return $ctx->build_date($args);
+                } else {
+                    return "";
+                }
+            }
